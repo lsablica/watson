@@ -1,0 +1,957 @@
+[
+    {
+        "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper.h",
+        "file_last_write": 1535839143.0,
+        "definitions": []
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+        "file_last_write": 1564663462.0,
+        "definitions": [
+            {
+                "usr": "c:@F@gsl_sf_hyperg_1F1_series_e#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_hyperg_1F1_series_e(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 51,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@lngamma_lanczos#d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "lngamma_lanczos(double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 93,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_lngamma_e#d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_lngamma_e(double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 109,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_hyperg_2F0_series_e#1d#1d#1d#I#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_hyperg_2F0_series_e(const double, const double, const double, int, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 113,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_exp_mult_err_e#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_exp_mult_err_e(const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 158,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_asymp_posx#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_asymp_posx(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 194,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_largebx#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_largebx(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 220,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_large2bm4a#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_large2bm4a(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 231,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_asymp_negx#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_asymp_negx(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 249,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_luke#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_luke(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 274,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_small_a_bgt0#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_small_a_bgt0(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 350,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_exp_e#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_exp_e(const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 412,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_hyperg_1F1_e#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_hyperg_1F1_e(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "line": 424,
+                "column": 5
+            }
+        ]
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/rwat.cpp",
+        "file_last_write": 1629971447.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rwat#I#d#&$@N@arma@C@Col>#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rwat(int, double, arma::vec &, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/rwat.cpp",
+                "line": 6,
+                "column": 11
+            },
+            {
+                "usr": "c:@F@rmwat#I#&$@N@arma@C@Col>#d#S1_#&$@N@arma@C@Mat>#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rmwat(int, arma::vec &, arma::vec, arma::mat &, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/rwat.cpp",
+                "line": 66,
+                "column": 15
+            }
+        ]
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+        "file_last_write": 1578397749.0,
+        "definitions": [
+            {
+                "usr": "c:@F@gneg#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gneg(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 6,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@g#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "g(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 18,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@kummerM#d#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "kummerM(double, double, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 32,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@B#d#d#d#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "B(double, double, double, double, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 38,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@integal#d#d#d#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "integal(double, double, double, double, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 42,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_hyperg_1F1_bounds#d#d#d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_hyperg_1F1_bounds(double, double, double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 46,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@log_hyperg_1F1_iter#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_hyperg_1F1_iter(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 72,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_hyperg_1F1#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_hyperg_1F1(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 91,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@extract_rows#&1$@N@arma@C@SpMat>#d#&$@N@arma@C@Col>#i#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "extract_rows(const arma::sp_mat &, arma::uvec &, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 114,
+                "column": 14
+            },
+            {
+                "usr": "c:@F@extract_rows#&1$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#i#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "extract_rows(const arma::mat &, arma::uvec &, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 126,
+                "column": 11
+            },
+            {
+                "usr": "c:@FT@>1#Tdiamclus_internal#&1t0.0#&$@N@arma@C@Mat>#d#S2_#I#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diamclus_internal(const T &, arma::mat &, arma::mat &, int, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 131,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#Tdiam_clus#&t0.0#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diam_clus(T &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 158,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@diam_clus1#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diam_clus1(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 172,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@diam_clus2#&$@N@arma@C@SpMat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diam_clus2(arma::sp_mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 176,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@hard#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hard(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 180,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@soft#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "soft(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 189,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@stoch#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "stoch(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 192,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#TE_step#&1t0.0#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#S2_#&1$@N@arma@C@Row>#d#*FvS2_II#&I#b#d#d#I#d#&d#d#S2_#S4_#S2_#&S7_#S11_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "E_step(const T &, arma::mat &, arma::vec &, arma::mat &, const arma::rowvec &, void (*)(arma::mat &, int, int), int &, bool, double, double, int, double, double &, double, arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, double &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 202,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#TpredictC#&t0.0#&$@N@arma@C@Col>#d#&$@N@arma@C@Mat>#d#&$@N@arma@C@Row>#d#$@N@Rcpp@C@String#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "predictC(T &, arma::vec &, arma::mat &, arma::rowvec &, Rcpp::String, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 243,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@predictC1#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#S0_#&$@N@arma@C@Row>#d#$@N@Rcpp@C@String#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "predictC1(arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, Rcpp::String, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 268,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@predictC2#&$@N@arma@C@SpMat>#d#&$@N@arma@C@Col>#d#&$@N@arma@C@Mat>#d#&$@N@arma@C@Row>#d#$@N@Rcpp@C@String#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "predictC2(arma::sp_mat &, arma::vec &, arma::mat &, arma::rowvec &, Rcpp::String, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 272,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@hybridnewton#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hybridnewton(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 276,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@hybridlognewton#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hybridlognewton(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 326,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@bisection#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "bisection(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 378,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@BBG#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "BBG(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 427,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@BBG_c#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "BBG_c(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 431,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@Sra_2007#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Sra_2007(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 435,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@Sra_2013#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Sra_2013(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 438,
+                "column": 8
+            },
+            {
+                "usr": "c:@FT@>1#TM_step#&1t0.0#*FddddIdI#&1$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#&S5_#&$@N@arma@C@Row>#d#I#I#d#d#I#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "M_step(const T &, double (*)(double, double, double, int, double, int), const arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, int, int, double, double, int, double)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 448,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#Tlog_like#&1t0.0#&1$@N@arma@C@Col>#d#&1$@N@arma@C@Mat>#d#&1$@N@arma@C@Row>#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_like(const T &, const arma::vec &, const arma::mat &, const arma::rowvec &, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 510,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_like1#&$@N@arma@C@Mat>#d#&1$@N@arma@C@Col>#d#&1S1_#&1$@N@arma@C@Row>#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_like1(arma::mat &, const arma::vec &, const arma::mat &, const arma::rowvec &, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 524,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_like2#&$@N@arma@C@SpMat>#d#&1$@N@arma@C@Col>#d#&1$@N@arma@C@Mat>#d#&1$@N@arma@C@Row>#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_like2(arma::sp_mat &, const arma::vec &, const arma::mat &, const arma::rowvec &, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 530,
+                "column": 8
+            },
+            {
+                "usr": "c:@FT@>1#Tinit#&1t0.0#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#S2_#&$@N@arma@C@Row>#d#*FddddIdI#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#I#I#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "init(const T &, arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, double (*)(double, double, double, int, double, int), List, int, int, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 537,
+                "column": 8
+            },
+            {
+                "usr": "c:@FT@>1#Twatson#&1t0.0#I#*Fv&$@N@arma@C@Mat>#dII#*FddddIdI#S4_#&$@N@arma@C@Col>#d#S4_#&$@N@arma@C@Row>#d#d#b#I#I#d#d#I#d#&d#S4_#S8_#S4_#S10_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "watson(const T &, int, void (*)(arma::mat &, int, int), double (*)(double, double, double, int, double, int), arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, double, bool, int, int, double, double, int, double, double &, arma::mat &, arma::vec &, arma::mat &, arma::rowvec &)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 574,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#TEM#&t0.0#I#$@N@Rcpp@C@String#S2_#d#b#I#I#d#&$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#b#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EM(T &, int, Rcpp::String, Rcpp::String, double, bool, int, int, double, List &, bool)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 601,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@EM1#&$@N@arma@C@Mat>#d#I#$@N@Rcpp@C@String#S2_#d#b#I#I#d#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#b#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EM1(arma::mat &, int, Rcpp::String, Rcpp::String, double, bool, int, int, double, List, bool)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 657,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@EM2#&$@N@arma@C@SpMat>#d#I#$@N@Rcpp@C@String#S2_#d#b#I#I#d#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#b#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EM2(arma::sp_mat &, int, Rcpp::String, Rcpp::String, double, bool, int, int, double, List, bool)",
+                "file": "/home/sablica/Dropbox/Watson/Untitled Folder/watson/src/wat6.cpp",
+                "line": 662,
+                "column": 6
+            }
+        ]
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/watson/src/hyper.h",
+        "file_last_write": 1535839143.0,
+        "definitions": []
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+        "file_last_write": 1535839975.0,
+        "definitions": [
+            {
+                "usr": "c:@F@gsl_sf_hyperg_1F1_series_e#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_hyperg_1F1_series_e(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 50,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@lngamma_lanczos#d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "lngamma_lanczos(double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 92,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_lngamma_e#d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_lngamma_e(double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 108,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_hyperg_2F0_series_e#1d#1d#1d#I#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_hyperg_2F0_series_e(const double, const double, const double, int, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 112,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_exp_mult_err_e#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_exp_mult_err_e(const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 157,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_asymp_posx#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_asymp_posx(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 193,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_largebx#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_largebx(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 219,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_large2bm4a#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_large2bm4a(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 230,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_asymp_negx#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_asymp_negx(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 248,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_luke#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_luke(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 273,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@hyperg_1F1_small_a_bgt0#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hyperg_1F1_small_a_bgt0(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 349,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_exp_e#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_exp_e(const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 411,
+                "column": 5
+            },
+            {
+                "usr": "c:@F@gsl_sf_hyperg_1F1_e#1d#1d#1d#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gsl_sf_hyperg_1F1_e(const double, const double, const double, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/hyper3.cpp",
+                "line": 423,
+                "column": 5
+            }
+        ]
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/watson/src/rwat.cpp",
+        "file_last_write": 1535840109.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rwat#I#d#&$@N@arma@C@Col>#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rwat(int, double, arma::vec &, double)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/rwat.cpp",
+                "line": 5,
+                "column": 11
+            },
+            {
+                "usr": "c:@F@rmwat#I#&$@N@arma@C@Col>#d#S1_#&$@N@arma@C@Mat>#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rmwat(int, arma::vec &, arma::vec, arma::mat &, double)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/rwat.cpp",
+                "line": 94,
+                "column": 15
+            }
+        ]
+    },
+    {
+        "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+        "file_last_write": 1535840061.0,
+        "definitions": [
+            {
+                "usr": "c:@F@gneg#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gneg(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 6,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@g#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "g(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 18,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@kummerM#d#d#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "kummerM(double, double, double)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 32,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_hyperg_1F1_iter#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_hyperg_1F1_iter(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 38,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_hyperg_1F1#d#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_hyperg_1F1(double, double, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 57,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@extract_rows#&1$@N@arma@C@SpMat>#d#&$@N@arma@C@Col>#i#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "extract_rows(const arma::sp_mat &, arma::uvec &, double)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 73,
+                "column": 14
+            },
+            {
+                "usr": "c:@F@extract_rows#&1$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#i#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "extract_rows(const arma::mat &, arma::uvec &, double)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 85,
+                "column": 11
+            },
+            {
+                "usr": "c:@FT@>1#Tdiamclus_internal#&1t0.0#&$@N@arma@C@Mat>#d#S2_#I#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diamclus_internal(const T &, arma::mat &, arma::mat &, int, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 90,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#Tdiam_clus#&t0.0#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diam_clus(T &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 117,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@diam_clus1#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diam_clus1(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 131,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@diam_clus2#&$@N@arma@C@SpMat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "diam_clus2(arma::sp_mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 135,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@hard#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hard(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 139,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@soft#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "soft(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 148,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@stoch#&$@N@arma@C@Mat>#d#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "stoch(arma::mat &, int, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 151,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#TE_step#&1t0.0#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#S2_#&1$@N@arma@C@Row>#d#*FvS2_II#&I#b#d#d#I#d#&d#d#S2_#S4_#S2_#&S7_#S11_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "E_step(const T &, arma::mat &, arma::vec &, arma::mat &, const arma::rowvec &, void (*)(arma::mat &, int, int), int &, bool, double, double, int, double, double &, double, arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, double &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 161,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#TpredictC#&t0.0#&$@N@arma@C@Col>#d#&$@N@arma@C@Mat>#d#&$@N@arma@C@Row>#d#$@N@Rcpp@C@String#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "predictC(T &, arma::vec &, arma::mat &, arma::rowvec &, Rcpp::String, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 202,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@predictC1#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#S0_#&$@N@arma@C@Row>#d#$@N@Rcpp@C@String#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "predictC1(arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, Rcpp::String, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 227,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@predictC2#&$@N@arma@C@SpMat>#d#&$@N@arma@C@Col>#d#&$@N@arma@C@Mat>#d#&$@N@arma@C@Row>#d#$@N@Rcpp@C@String#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "predictC2(arma::sp_mat &, arma::vec &, arma::mat &, arma::rowvec &, Rcpp::String, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 231,
+                "column": 15
+            },
+            {
+                "usr": "c:@F@hybridnewton#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hybridnewton(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 235,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@hybridlognewton#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "hybridlognewton(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 271,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@bisection#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "bisection(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 308,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@BBG#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "BBG(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 342,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@BBG_c#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "BBG_c(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 346,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@Sra_2007#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Sra_2007(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 350,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@Sra_2013#d#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Sra_2013(double, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 353,
+                "column": 8
+            },
+            {
+                "usr": "c:@FT@>1#TM_step#&1t0.0#*FddddIdI#&1$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#&S5_#&$@N@arma@C@Row>#d#I#I#d#d#I#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "M_step(const T &, double (*)(double, double, double, int, double, int), const arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, int, int, double, double, int, double)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 363,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#Tlog_like#&1t0.0#&1$@N@arma@C@Col>#d#&1$@N@arma@C@Mat>#d#&1$@N@arma@C@Row>#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_like(const T &, const arma::vec &, const arma::mat &, const arma::rowvec &, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 425,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_like1#&$@N@arma@C@Mat>#d#&1$@N@arma@C@Col>#d#&1S1_#&1$@N@arma@C@Row>#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_like1(arma::mat &, const arma::vec &, const arma::mat &, const arma::rowvec &, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 439,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@log_like2#&$@N@arma@C@SpMat>#d#&1$@N@arma@C@Col>#d#&1$@N@arma@C@Mat>#d#&1$@N@arma@C@Row>#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "log_like2(arma::sp_mat &, const arma::vec &, const arma::mat &, const arma::rowvec &, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 445,
+                "column": 8
+            },
+            {
+                "usr": "c:@FT@>1#Tinit#&1t0.0#&$@N@arma@C@Mat>#d#&$@N@arma@C@Col>#d#S2_#&$@N@arma@C@Row>#d#*FddddIdI#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#I#I#d#d#I#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "init(const T &, arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, double (*)(double, double, double, int, double, int), List, int, int, double, double, int, double, int)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 452,
+                "column": 8
+            },
+            {
+                "usr": "c:@FT@>1#Twatson#&1t0.0#I#*Fv&$@N@arma@C@Mat>#dII#*FddddIdI#S4_#&$@N@arma@C@Col>#d#S4_#&$@N@arma@C@Row>#d#d#b#I#I#d#d#I#d#&d#S4_#S8_#S4_#S10_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "watson(const T &, int, void (*)(arma::mat &, int, int), double (*)(double, double, double, int, double, int), arma::mat &, arma::vec &, arma::mat &, arma::rowvec &, double, bool, int, int, double, double, int, double, double &, arma::mat &, arma::vec &, arma::mat &, arma::rowvec &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 489,
+                "column": 6
+            },
+            {
+                "usr": "c:@FT@>1#TEM#&t0.0#I#$@N@Rcpp@C@String#S2_#d#b#I#I#d#&$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EM(T &, int, Rcpp::String, Rcpp::String, double, bool, int, int, double, List &)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 516,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@EM1#&$@N@arma@C@Mat>#d#I#$@N@Rcpp@C@String#S2_#d#b#I#I#d#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EM1(arma::mat &, int, Rcpp::String, Rcpp::String, double, bool, int, int, double, List)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 570,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@EM2#&$@N@arma@C@SpMat>#d#I#$@N@Rcpp@C@String#S2_#d#b#I#I#d#$@N@Rcpp@C@Vector>#VI19#@N@Rcpp@CT>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EM2(arma::sp_mat &, int, Rcpp::String, Rcpp::String, double, bool, int, int, double, List)",
+                "file": "/home/sablica/Dropbox/Watson/watson/src/wat6.cpp",
+                "line": 575,
+                "column": 6
+            }
+        ]
+    }
+]

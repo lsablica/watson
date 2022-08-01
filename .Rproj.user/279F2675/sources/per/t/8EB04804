@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1535839956722.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1318819129",
+    "id" : "8EB04804",
+    "lastKnownWriteTime" : 1535839989,
+    "last_content_update" : 1535839989039,
+    "path" : "C:/Users/lukin/Dropbox/Watson/watson/src/hyper3.cpp",
+    "project_path" : "src/hyper3.cpp",
+    "properties" : {
+        "cursorPosition" : "24,18",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

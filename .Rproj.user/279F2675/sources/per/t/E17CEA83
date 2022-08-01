@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1535840044788.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3167439514",
+    "id" : "E17CEA83",
+    "lastKnownWriteTime" : 1535840109,
+    "last_content_update" : 1535840109458,
+    "path" : "C:/Users/lukin/Dropbox/Watson/watson/src/rwat.cpp",
+    "project_path" : "src/rwat.cpp",
+    "properties" : {
+        "cursorPosition" : "1,43",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

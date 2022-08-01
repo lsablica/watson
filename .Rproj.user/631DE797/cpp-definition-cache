@@ -1,0 +1,131 @@
+[
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper.h",
+        "file_last_write" : 1535839143
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 51,
+                "name" : "gsl_sf_hyperg_1F1_series_e(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@gsl_sf_hyperg_1F1_series_e#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 93,
+                "name" : "lngamma_lanczos(double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@lngamma_lanczos#d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 109,
+                "name" : "gsl_sf_lngamma_e(double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@gsl_sf_lngamma_e#d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 113,
+                "name" : "gsl_sf_hyperg_2F0_series_e(const double, const double, const double, int, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@gsl_sf_hyperg_2F0_series_e#1d#1d#1d#I#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 158,
+                "name" : "gsl_sf_exp_mult_err_e(const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@gsl_sf_exp_mult_err_e#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 194,
+                "name" : "hyperg_1F1_asymp_posx(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@hyperg_1F1_asymp_posx#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 220,
+                "name" : "hyperg_1F1_largebx(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@hyperg_1F1_largebx#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 231,
+                "name" : "hyperg_1F1_large2bm4a(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@hyperg_1F1_large2bm4a#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 249,
+                "name" : "hyperg_1F1_asymp_negx(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@hyperg_1F1_asymp_negx#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 274,
+                "name" : "hyperg_1F1_luke(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@hyperg_1F1_luke#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 350,
+                "name" : "hyperg_1F1_small_a_bgt0(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@hyperg_1F1_small_a_bgt0#1d#1d#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 412,
+                "name" : "gsl_sf_exp_e(const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@gsl_sf_exp_e#1d#&d#"
+            },
+            {
+                "column" : 5,
+                "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+                "kind" : 6,
+                "line" : 424,
+                "name" : "gsl_sf_hyperg_1F1_e(const double, const double, const double, double &)",
+                "parent_name" : "",
+                "usr" : "c:@F@gsl_sf_hyperg_1F1_e#1d#1d#1d#&d#"
+            }
+        ],
+        "file" : "/home/lukas/Dropbox/Watson/Untitled Folder/watson/src/hyper3.cpp",
+        "file_last_write" : 1564663462
+    }
+]

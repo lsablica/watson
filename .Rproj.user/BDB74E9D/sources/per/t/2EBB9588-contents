@@ -1,0 +1,116 @@
+library(watson)
+
+a <- rmwat(n = 200, weights = c(0.5,0.5),kappa = c(10,10), mu = matrix(c(1,0,0,1),nrow = 2), b = -10)
+plot(a[,1], a[,2], col= attr(a,"id"))
+u = diam_clus(a,2,100)
+plot(a[,1], a[,2], col= attr(u,"id"))
+
+# X <- matrix(rnorm(40),ncol = 4)
+# X <- X/sqrt(rowSums(X^2))
+# watson(X,2)
+# q <- watson(X,2, nruns = 10)
+set.seed(20)
+a <- rmwat(n = 2000, weights = c(0.5,0.5),kappa = c(-200,-200), mu = matrix(c(1,1,1,-1,1,1),nrow = 3), b = -10)
+q <- watson(a,2)
+q
+watson(a,2,E = "hard")
+watson(a,2,E = "stoch", nruns = 5)
+
+library(rgl)
+
+rgl.open()
+view3d( theta = 195, phi = 10, zoom =0.5)
+rgl.bg(color = "white")
+rgl.points(a[,1],a[,2],a[,3], ylim=c(-1,1),col = attr(a,"id") ,xlim=c(-1,1), zlim = c(-1,1), xlab = "x", ylab = "y", zlab = "z", alpha = 0.8)
+spheres3d(x = 0, y = 0, z = 0, radius = 0.98, col = "green", alpha = 0.6, back = "lines")
+rgl.lines(c(-1.5,1.5), c(0, 0), c(0, 0), color = "black")
+rgl.lines(c(0, 0), c(-1.5,1.5), c(0, 0), color = "blue")
+rgl.lines(c(0, 0), c(0, 0), c(-1.5,1.5), color = "red")
+
+rgl.open()
+view3d( theta = 195, phi = 10, zoom =0.5)
+rgl.bg(color = "white")
+rgl.points(a[,1],a[,2],a[,3], ylim=c(-1,1),col =  predict(q) ,xlim=c(-1,1), zlim = c(-1,1), xlab = "x", ylab = "y", zlab = "z", alpha = 0.8)
+spheres3d(x = 0, y = 0, z = 0, radius = 0.98, col = "green", alpha = 0.6, back = "lines")
+rgl.lines(c(-1.5,1.5), c(0, 0), c(0, 0), color = "black")
+rgl.lines(c(0, 0), c(-1.5,1.5), c(0, 0), color = "blue")
+rgl.lines(c(0, 0), c(0, 0), c(-1.5,1.5), color = "red")
+
+
+a <- rmwat(n = 2000, weights = c(0.1,0.3,0.2,0.2,0.2), kappa = c(-200,-200,30,50,100), mu = matrix(c(1,1,1,-1,1,1, -1,-1,-1, 0,1,-1,1,0,0),nrow = 3), b = -10)
+# q <- watson(a,5, init_iter = 10)
+watson(a,5)
+watson(a,5, ids=TRUE)
+watson(a,5,nruns=50)
+# q <- watson(a,5, E= "hard",nruns = 50)
+# q <- watson(a,5, E= "stoch",nruns = 50)
+# q <- watson(a,5,nruns=50)
+q <- watson(a, 6, minweight = 0.09, nruns = 200)
+q
+
+rgl.open()
+view3d( theta = 195, phi = 10, zoom =0.5)
+rgl.bg(color = "white")
+rgl.points(a[,1],a[,2],a[,3], ylim=c(-1,1),col = attr(a,"id") ,xlim=c(-1,1), zlim = c(-1,1), xlab = "x", ylab = "y", zlab = "z", alpha = 0.8)
+spheres3d(x = 0, y = 0, z = 0, radius = 0.98, col = "yellow", alpha = 0.6, back = "lines")
+rgl.lines(c(-1.5,1.5), c(0, 0), c(0, 0), color = "black")
+rgl.lines(c(0, 0), c(-1.5,1.5), c(0, 0), color = "blue")
+rgl.lines(c(0, 0), c(0, 0), c(-1.5,1.5), color = "red")
+
+rgl.open()
+view3d( theta = 195, phi = 10, zoom =0.5)
+rgl.bg(color = "white")
+rgl.points(a[,1],a[,2],a[,3], ylim=c(-1,1),col =  predict(q) ,xlim=c(-1,1), zlim = c(-1,1), xlab = "x", ylab = "y", zlab = "z", alpha = 0.8)
+spheres3d(x = 0, y = 0, z = 0, radius = 0.98, col = "yellow", alpha = 0.6, back = "lines")
+rgl.lines(c(-1.5,1.5), c(0, 0), c(0, 0), color = "black")
+rgl.lines(c(0, 0), c(-1.5,1.5), c(0, 0), color = "blue")
+rgl.lines(c(0, 0), c(0, 0), c(-1.5,1.5), color = "red")
+
+
+
+predict(q)
+v=rmwat(n = 20, weights = c(0.1,0.3,0.2,0.2,0.2), kappa = c(-200,-200,30,50,100), mu = matrix(c(1,1,1,-1,1,1, -1,-1,-1, 0,1,-1,1,0,0),nrow = 3), b = -10)
+predict(q,v)
+table(predict(q,v),attr(v,"id"))
+logLik(q)
+logLik(q,v)
+coef(q)
+AIC(q) ; BIC(q)
+library(Matrix)
+
+aa= Matrix(unclass(a),sparse = TRUE)
+qq=watson(aa,5, nruns = 10)
+predict(q, Matrix(unclass(v),sparse = TRUE))
+logLik(q,Matrix(unclass(v),sparse = TRUE))
+
+# a=rmwat(n = 2000, weights = c(0.5,0.5),kappa = c(-200,-200), mu = matrix(c(1,1,1,-1,1,1),nrow = 3), b = -10)
+# microbenchmark(watson(a,5,nruns=50, converge = FALSE),movMF(a,5, nruns = 50,converge = FALSE), times = 5)
+
+a <- rmwat(n = 10000, weights = c(0.1,0.1,0.4,0.1,0.1,0.1,0.05,0.05), kappa = c(100,100,-200,800,800,20,2000,2000), mu = matrix(c(0.35,0.55,1,-0.35,0.55,1, 0,-1,-0.3,0.35,0.55,1,-0.35,0.55,1,0,1,0.4,0.09,0.15,1,-0.09,0.15,1),nrow = 3), b = -10)
+
+co = sapply(attr(a,"id"), function(x) switch(x, "1" = "black", "2" = "black", "3" = "red", "4" = "blue", "5"= "blue" , "6" = "black", "7" = "black", "8" = "black"))
+
+rgl.open()
+view3d( theta = 0, phi = 15, zoom =0.55)
+rgl.bg(color = "#005f8d")
+rgl.points(a[,1],a[,2],a[,3], ylim=c(-1,1),col = co ,xlim=c(-1,1), zlim = c(-1,1), xlab = "x", ylab = "y", zlab = "z", alpha = 0.8)
+spheres3d(x = 0, y = 0, z = 0, radius = 1, col = "#eac086", alpha = 0.95, back = "lines")
+rgl.snapshot("pic4.png")
+rgl.postscript("pic3.eps", fmt = "eps")
+
+png("SaveThisPlot.png", width=101, height = 77, units="px", pointsize=1, bg="transparent")
+rgl.snapshot("SaveThisPlot.png")
+
+
+a <- rmwat(n = 2000, weights = c(1),kappa = c(20), mu = matrix(c(1,1,-1),nrow = 3), b = -10)
+a <- rmwat(n = 5000, weights = c(1),kappa = 8, mu = matrix(c(1,-1,-1),nrow = 3), b = -10)
+
+rgl.open()
+view3d( theta = 175, phi = 10, zoom =0.6)
+rgl.bg(color = "white")
+rgl.points(a[,1],a[,2],a[,3], ylim=c(-1,1),col = attr(a,"id") ,xlim=c(-1,1), zlim = c(-1,1), xlab = "x", ylab = "y", zlab = "z", alpha = 0.8)
+spheres3d(x = 0, y = 0, z = 0, radius = 0.99, col = "green", alpha = 0.6, back = "lines")
+rgl.lines(c(-1.5,1.5), c(0, 0), c(0, 0), color = "black")
+rgl.lines(c(0, 0), c(-1.5,1.5), c(0, 0), color = "blue")
+rgl.lines(c(0, 0), c(0, 0), c(-1.5,1.5), color = "red")
+rgl.snapshot("spheree1.png")
