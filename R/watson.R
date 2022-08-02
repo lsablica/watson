@@ -1,5 +1,6 @@
 #' @useDynLib watson
 #' @importFrom Rcpp sourceCpp
+#' @import Tinflex
 NULL
 #' @export
 print.watfit <- function(x, ...){

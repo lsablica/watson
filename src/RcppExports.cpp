@@ -11,6 +11,22 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// Tinflexsampler_sampler_from_c
+Rcpp::NumericVector Tinflexsampler_sampler_from_c(Rcpp::NumericVector& sexp_n, Rcpp::NumericVector& sexp_params, Rcpp::NumericVector& sexp_ib, Rcpp::NumericVector& sexp_c, Rcpp::NumericVector& sexp_rho, Rcpp::NumericVector& sexp_max_intervals);
+RcppExport SEXP _watson_Tinflexsampler_sampler_from_c(SEXP sexp_nSEXP, SEXP sexp_paramsSEXP, SEXP sexp_ibSEXP, SEXP sexp_cSEXP, SEXP sexp_rhoSEXP, SEXP sexp_max_intervalsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_n(sexp_nSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_params(sexp_paramsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_ib(sexp_ibSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_c(sexp_cSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_rho(sexp_rhoSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_max_intervals(sexp_max_intervalsSEXP);
+    rcpp_result_gen = Rcpp::wrap(Tinflexsampler_sampler_from_c(sexp_n, sexp_params, sexp_ib, sexp_c, sexp_rho, sexp_max_intervals));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rwat
 arma::mat rwat(int n, double kappa, arma::vec& mu, double b);
 RcppExport SEXP _watson_rwat(SEXP nSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP bSEXP) {
@@ -217,6 +233,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_watson_Tinflexsampler_sampler_from_c", (DL_FUNC) &_watson_Tinflexsampler_sampler_from_c, 6},
     {"_watson_rwat", (DL_FUNC) &_watson_rwat, 4},
     {"_watson_rmwat", (DL_FUNC) &_watson_rmwat, 5},
     {"_watson_g", (DL_FUNC) &_watson_g, 4},
