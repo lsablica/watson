@@ -11,25 +11,24 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// Tinflexsampler_sampler_from_c
-Rcpp::NumericVector Tinflexsampler_sampler_from_c(Rcpp::NumericVector& sexp_n, Rcpp::NumericVector& sexp_params, Rcpp::NumericVector& sexp_ib, Rcpp::NumericVector& sexp_c, Rcpp::NumericVector& sexp_rho, Rcpp::NumericVector& sexp_max_intervals);
-RcppExport SEXP _watson_Tinflexsampler_sampler_from_c(SEXP sexp_nSEXP, SEXP sexp_paramsSEXP, SEXP sexp_ibSEXP, SEXP sexp_cSEXP, SEXP sexp_rhoSEXP, SEXP sexp_max_intervalsSEXP) {
+// rwatTinflex
+arma::mat rwatTinflex(int n, double kappa, arma::vec& mu, double cT, double rho);
+RcppExport SEXP _watson_rwatTinflex(SEXP nSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP cTSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_n(sexp_nSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_params(sexp_paramsSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_ib(sexp_ibSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_c(sexp_cSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_rho(sexp_rhoSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector& >::type sexp_max_intervals(sexp_max_intervalsSEXP);
-    rcpp_result_gen = Rcpp::wrap(Tinflexsampler_sampler_from_c(sexp_n, sexp_params, sexp_ib, sexp_c, sexp_rho, sexp_max_intervals));
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< double >::type kappa(kappaSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< double >::type cT(cTSEXP);
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(rwatTinflex(n, kappa, mu, cT, rho));
     return rcpp_result_gen;
 END_RCPP
 }
-// rwat
-arma::mat rwat(int n, double kappa, arma::vec& mu, double b);
-RcppExport SEXP _watson_rwat(SEXP nSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP bSEXP) {
+// rwatACG
+arma::mat rwatACG(int n, double kappa, arma::vec& mu, double b);
+RcppExport SEXP _watson_rwatACG(SEXP nSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -37,13 +36,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type kappa(kappaSEXP);
     Rcpp::traits::input_parameter< arma::vec& >::type mu(muSEXP);
     Rcpp::traits::input_parameter< double >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(rwat(n, kappa, mu, b));
+    rcpp_result_gen = Rcpp::wrap(rwatACG(n, kappa, mu, b));
     return rcpp_result_gen;
 END_RCPP
 }
 // rmwat
-NumericMatrix rmwat(int n, arma::vec& weights, arma::vec kappa, arma::mat& mu, double b);
-RcppExport SEXP _watson_rmwat(SEXP nSEXP, SEXP weightsSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP bSEXP) {
+NumericMatrix rmwat(int n, arma::vec& weights, arma::vec kappa, arma::mat& mu, String type, double b, double cT, double rho);
+RcppExport SEXP _watson_rmwat(SEXP nSEXP, SEXP weightsSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP typeSEXP, SEXP bSEXP, SEXP cTSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -51,8 +50,11 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type kappa(kappaSEXP);
     Rcpp::traits::input_parameter< arma::mat& >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< String >::type type(typeSEXP);
     Rcpp::traits::input_parameter< double >::type b(bSEXP);
-    rcpp_result_gen = Rcpp::wrap(rmwat(n, weights, kappa, mu, b));
+    Rcpp::traits::input_parameter< double >::type cT(cTSEXP);
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(rmwat(n, weights, kappa, mu, type, b, cT, rho));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -233,9 +235,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_watson_Tinflexsampler_sampler_from_c", (DL_FUNC) &_watson_Tinflexsampler_sampler_from_c, 6},
-    {"_watson_rwat", (DL_FUNC) &_watson_rwat, 4},
-    {"_watson_rmwat", (DL_FUNC) &_watson_rmwat, 5},
+    {"_watson_rwatTinflex", (DL_FUNC) &_watson_rwatTinflex, 5},
+    {"_watson_rwatACG", (DL_FUNC) &_watson_rwatACG, 4},
+    {"_watson_rmwat", (DL_FUNC) &_watson_rmwat, 8},
     {"_watson_g", (DL_FUNC) &_watson_g, 4},
     {"_watson_kummerM", (DL_FUNC) &_watson_kummerM, 3},
     {"_watson_log_hyperg_1F1", (DL_FUNC) &_watson_log_hyperg_1F1, 4},
