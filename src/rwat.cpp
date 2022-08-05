@@ -13,6 +13,54 @@ extern "C" {
 }
 #endif
 
+double ACGvsTinflex(int n, double kappa, double d){
+   if(d == 2){
+      return 10; //acg always
+   }
+   Environment pkg = Environment::namespace_env("watson");
+   arma::cube tinflexdata = pkg["resultTinflex"];
+   arma::cube acgdata = pkg["resultACG"];
+   arma::vec ns = {1, 3, 5, 10, 20, 50, 100, 500, 1000, 10000};
+   arma::vec kappas = {-100, -50, -10, -1, 1, 10, 50, 100};
+   arma::vec ds = {3, 5, 10, 20, 50, 100, 200, 1000};
+   double npos = sum(ns <= n);
+   if(npos == ns.n_elem) npos-- ;
+   double kappapos = sum(kappas <= kappa);
+   if(kappapos == kappas.n_elem) kappapos-- ;
+   if(kappapos == 0) kappapos++ ;
+   double dpos = sum(ds <= d);
+   if(dpos == ds.n_elem) dpos-- ;
+   double npart = (n - ns(npos-1))/(ns(npos)-ns(npos-1));
+   double kappaart = (kappa - kappas(kappapos-1))/(kappas(kappapos)-kappas(kappapos-1));
+   double dpart = (d - ds(dpos-1))/(ds(dpos)-ds(dpos-1));
+
+   double Tinflexnmkm = tinflexdata(npos-1,kappapos-1,dpos-1) + dpart*(tinflexdata(npos-1,kappapos-1,dpos) - tinflexdata(npos-1,kappapos-1,dpos-1));
+   double Tinflexnmk = tinflexdata(npos-1,kappapos,dpos-1) + dpart*(tinflexdata(npos-1,kappapos,dpos) - tinflexdata(npos-1,kappapos,dpos-1));
+   double Tinflexnkm = tinflexdata(npos,kappapos-1,dpos-1) + dpart*(tinflexdata(npos,kappapos-1,dpos) - tinflexdata(npos,kappapos-1,dpos-1));
+   double Tinflexnk = tinflexdata(npos,kappapos,dpos-1) + dpart*(tinflexdata(npos,kappapos,dpos) - tinflexdata(npos,kappapos,dpos-1));
+   
+   double Tinflexnm = Tinflexnmkm + kappaart*(Tinflexnmk - Tinflexnmkm);
+   double Tinflexn = Tinflexnkm + kappaart*(Tinflexnk - Tinflexnkm);
+   
+   double Tinflex = Tinflexnm + npart*(Tinflexn - Tinflexnm);
+   
+   
+   double ACGnmkm = acgdata(npos-1,kappapos-1,dpos-1) + dpart*(acgdata(npos-1,kappapos-1,dpos) - acgdata(npos-1,kappapos-1,dpos-1));
+   double ACGnmk = acgdata(npos-1,kappapos,dpos-1) + dpart*(acgdata(npos-1,kappapos,dpos) - acgdata(npos-1,kappapos,dpos-1));
+   double ACGnkm = acgdata(npos,kappapos-1,dpos-1) + dpart*(acgdata(npos,kappapos-1,dpos) - acgdata(npos,kappapos-1,dpos-1));
+   double ACGnk = acgdata(npos,kappapos,dpos-1) + dpart*(acgdata(npos,kappapos,dpos) - acgdata(npos,kappapos,dpos-1));
+   
+   double ACGnm = ACGnmkm + kappaart*(ACGnmk - ACGnmkm);
+   double ACGn = ACGnkm + kappaart*(ACGnk - ACGnkm);
+   
+   double ACG = ACGnm + npart*(ACGn - ACGnm);
+   
+   //Rcout << "ACG:" << ACG << std::endl;
+   //Rcout << "Tinflex:" << Tinflex << std::endl;
+   //Rcout << "Tinflex/ACG:" << Tinflex/ACG << std::endl;
+   
+   return Tinflex/ACG; // 1> Tinflex better, >1 ACG better
+}
 
 NumericVector Tinflexsampler_sampler_from_c(int n,
                                             double kappa,
@@ -124,21 +172,20 @@ NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, S
   arma::mat A(n, p);
   arma::uvec sample = RcppArmadillo::sample(arma::regspace<arma::uvec>(0, K-1), n, true, weights);
   int size;
+  String type2;
   arma::uvec which;
   arma::vec mus;
   for(int i = 0; i < K; i++) {
     which = arma::find(sample==i);
     size = which.n_elem;
-    // Rcout << size << std::endl;
     mus = mu.col(i);
     if(size>0){
-       if(type == "acg"){
+       type2 = (type == "auto") ? ((ACGvsTinflex(size, kappa(i), p) < 1) ? "tinflex" : "acg") : type;
+       if(type2 == "acg"){
           A.rows(which) = rwatACG(size, kappa(i), mus, b);
-       } else if(type == "tinflex"){
+       } else {
           A.rows(which) = rwatTinflex(size, kappa(i), mus, cT, rho);
-       } else{
-          A.rows(which) = rwatACG(size, kappa(i), mus, b); //for now, eventually auto 
-       }
+       } 
     }
   }
   sample = sample + 1;

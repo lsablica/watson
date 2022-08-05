@@ -16,3 +16,4 @@ Encoding: UTF-8
 Imports: Rcpp (>= 0.12.18), Tinflex (>= 1.8)
 LinkingTo: Rcpp, RcppArmadillo, Tinflex
 RoxygenNote: 7.1.2
+Depends: R (>= 2.10)
