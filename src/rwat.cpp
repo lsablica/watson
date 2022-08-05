@@ -1,9 +1,107 @@
 #include <RcppArmadillo.h>
 #include <RcppArmadilloExtensions/sample.h>
+#include "Rcpp.h"
 using namespace Rcpp;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+   
+#include "rdist.h"
+   
+#ifdef __cplusplus
+}
+#endif
+
+double ACGvsTinflex(int n, double kappa, double d){
+   if(d == 2){
+      return 10; //acg always
+   }
+   Environment pkg = Environment::namespace_env("watson");
+   arma::cube tinflexdata = pkg["resultTinflex"];
+   arma::cube acgdata = pkg["resultACG"];
+   arma::vec ns = {1, 3, 5, 10, 20, 50, 100, 500, 1000, 10000};
+   arma::vec kappas = {-100, -50, -10, -1, 1, 10, 50, 100};
+   arma::vec ds = {3, 5, 10, 20, 50, 100, 200, 1000};
+   double npos = sum(ns <= n);
+   if(npos == ns.n_elem) npos-- ;
+   double kappapos = sum(kappas <= kappa);
+   if(kappapos == kappas.n_elem) kappapos-- ;
+   if(kappapos == 0) kappapos++ ;
+   double dpos = sum(ds <= d);
+   if(dpos == ds.n_elem) dpos-- ;
+   double npart = (n - ns(npos-1))/(ns(npos)-ns(npos-1));
+   double kappaart = (kappa - kappas(kappapos-1))/(kappas(kappapos)-kappas(kappapos-1));
+   double dpart = (d - ds(dpos-1))/(ds(dpos)-ds(dpos-1));
+
+   double Tinflexnmkm = tinflexdata(npos-1,kappapos-1,dpos-1) + dpart*(tinflexdata(npos-1,kappapos-1,dpos) - tinflexdata(npos-1,kappapos-1,dpos-1));
+   double Tinflexnmk = tinflexdata(npos-1,kappapos,dpos-1) + dpart*(tinflexdata(npos-1,kappapos,dpos) - tinflexdata(npos-1,kappapos,dpos-1));
+   double Tinflexnkm = tinflexdata(npos,kappapos-1,dpos-1) + dpart*(tinflexdata(npos,kappapos-1,dpos) - tinflexdata(npos,kappapos-1,dpos-1));
+   double Tinflexnk = tinflexdata(npos,kappapos,dpos-1) + dpart*(tinflexdata(npos,kappapos,dpos) - tinflexdata(npos,kappapos,dpos-1));
+   
+   double Tinflexnm = Tinflexnmkm + kappaart*(Tinflexnmk - Tinflexnmkm);
+   double Tinflexn = Tinflexnkm + kappaart*(Tinflexnk - Tinflexnkm);
+   
+   double Tinflex = Tinflexnm + npart*(Tinflexn - Tinflexnm);
+   
+   
+   double ACGnmkm = acgdata(npos-1,kappapos-1,dpos-1) + dpart*(acgdata(npos-1,kappapos-1,dpos) - acgdata(npos-1,kappapos-1,dpos-1));
+   double ACGnmk = acgdata(npos-1,kappapos,dpos-1) + dpart*(acgdata(npos-1,kappapos,dpos) - acgdata(npos-1,kappapos,dpos-1));
+   double ACGnkm = acgdata(npos,kappapos-1,dpos-1) + dpart*(acgdata(npos,kappapos-1,dpos) - acgdata(npos,kappapos-1,dpos-1));
+   double ACGnk = acgdata(npos,kappapos,dpos-1) + dpart*(acgdata(npos,kappapos,dpos) - acgdata(npos,kappapos,dpos-1));
+   
+   double ACGnm = ACGnmkm + kappaart*(ACGnmk - ACGnmkm);
+   double ACGn = ACGnkm + kappaart*(ACGnk - ACGnkm);
+   
+   double ACG = ACGnm + npart*(ACGn - ACGnm);
+   
+   //Rcout << "ACG:" << ACG << std::endl;
+   //Rcout << "Tinflex:" << Tinflex << std::endl;
+   //Rcout << "Tinflex/ACG:" << Tinflex/ACG << std::endl;
+   
+   return Tinflex/ACG; // 1> Tinflex better, >1 ACG better
+}
+
+NumericVector Tinflexsampler_sampler_from_c(int n,
+                                            double kappa,
+                                            double d,
+                                            double cT,
+                                            double rho) {
+   NumericVector sexp_params = {kappa,d};
+   NumericVector sexp_c = {cT};
+   NumericVector sexp_rho = {rho};
+   IntegerVector sexp_n = {n};
+   NumericVector sexp_ib = {0,1};
+   NumericVector sexp_max_intervals = {1001};
+   SEXP ab = Tinflexsampler_sampler(sexp_n, sexp_params, sexp_ib, sexp_c,
+                                    sexp_rho, sexp_max_intervals);
+   Rcpp::NumericVector result( ab );
+   return result;
+}
+
 // [[Rcpp::export]]
-arma::mat rwat(int n, double kappa, arma::vec &mu, double b = -10){
+arma::mat rwatTinflex(int n, double kappa, arma::vec &mu, double cT, double rho){
+   double norm = as_scalar(sum(pow(mu,2)));
+   int p = mu.n_elem;
+   arma::mat A(n, p, arma::fill::randn);
+   if(kappa == 0 || norm == 0){/*uniform*/
+      return normalise(A,2,1);
+   }
+   mu = mu/sqrt(norm);
+   NumericVector v = Tinflexsampler_sampler_from_c(n, kappa, p, cT, rho);
+   arma::vec w = as<arma::vec>(wrap(v));
+   arma::vec choice = {-1, 1};
+   arma::vec index = RcppArmadillo::sample(choice, n, true); 
+   w = w % index;
+   A = A - A*mu*mu.t() ;
+   A = arma::normalise(A, 2, 1);
+   A = A.each_col() % sqrt(1 - w%w);
+   A = w*mu.t() + A;
+   return A;
+} 
+
+// [[Rcpp::export]]
+arma::mat rwatACG(int n, double kappa, arma::vec &mu, double b = -10){
    double norm = as_scalar(sum(pow(mu,2)));
    int p = mu.n_elem;
    arma::mat A(n, p);
@@ -45,7 +143,10 @@ arma::mat rwat(int n, double kappa, arma::vec &mu, double b = -10){
 //' @param weights a numeric vector with non-negative elements giving the mixture probabilities.
 //' @param kappa a numeric vector giving the kappa parameters of the mixture components.
 //' @param mu a numeric matrix with columns giving the mu parameters of the mixture components.
+//' @param type a string indicating whether ACG sampler (\code{type = acg}), Tynflex sampler (\code{type = tinflex}) or automatic selection (\code{type = auto}) of the sampler should be used, default: "acg".  
 //' @param b a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.
+//' @param cT parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.
+//' @param performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
 //' @return  A matrix with rows equal to the generated values.
 //' @details The function generates samples from finite mixtures of Watson distributions,
 //'          using adjusted BACG algorithm of Kent (2013) for the case of Watson distribution. The algorithm is of the
@@ -63,22 +164,28 @@ arma::mat rwat(int n, double kappa, arma::vec &mu, double b = -10){
 //'   in directional data analysis with applications \url{http://arxiv.org/pdf/1310.8110v1.pdf}
 //' @export
 // [[Rcpp::export]]
-NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, double b = -10){
+NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, String type = "acg",
+                    double b = -10, double cT = 0, double rho=1.1){
   weights = arma::normalise(weights, 1);
   int p = mu.n_rows;
   int K = mu.n_cols;
   arma::mat A(n, p);
   arma::uvec sample = RcppArmadillo::sample(arma::regspace<arma::uvec>(0, K-1), n, true, weights);
   int size;
+  String type2;
   arma::uvec which;
   arma::vec mus;
   for(int i = 0; i < K; i++) {
     which = arma::find(sample==i);
     size = which.n_elem;
-    // Rcout << size << std::endl;
     mus = mu.col(i);
     if(size>0){
-      A.rows(which) = rwat(size, kappa(i), mus, b);
+       type2 = (type == "auto") ? ((ACGvsTinflex(size, kappa(i), p) < 1) ? "tinflex" : "acg") : type;
+       if(type2 == "acg"){
+          A.rows(which) = rwatACG(size, kappa(i), mus, b);
+       } else {
+          A.rows(which) = rwatTinflex(size, kappa(i), mus, cT, rho);
+       } 
     }
   }
   sample = sample + 1;
