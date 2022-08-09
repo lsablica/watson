@@ -534,6 +534,22 @@ double log_like2(arma::sp_mat &data, const arma::vec &kappa_vector, const arma::
 }
 
 template <class T>
+double log_like_hardinit(const T &data, const arma::vec &kappa_vector, 
+                         const arma::mat &mu_matrix, int K, double beta, int n, const arma::mat &beta_matrix){
+   arma::uvec clus(n);
+   arma::mat A;
+   arma::vec like;
+   double overall = 0;
+   for(int i = 0; i < K; i++) {
+      clus = arma::conv_to<arma::uvec>::from(beta_matrix.col(i));
+      A = extract_rows(data, clus, 1);
+      like = kappa_vector(i)*pow(A*mu_matrix.col(i),2) - log_hyperg_1F1(0.5, beta, kappa_vector(i), 10);
+      overall += sum(like);
+   }
+   return overall; 
+}
+
+template <class T>
 double init(const T &data, arma::mat &beta_matrix, arma::vec &kappa_vector, arma::mat &mu_matrix, arma::rowvec &pi_vector,
             double (*M_method)(double, double, double, int, double, int), List start,
             int K, int N, double reltol, double p, int n, double beta, int maxiter){
@@ -564,7 +580,7 @@ double init(const T &data, arma::mat &beta_matrix, arma::vec &kappa_vector, arma
     }
   }
   if(maxiter == 0){
-    return log_like(data,/*c-r*/kappa_vector,/*c-r*/mu_matrix,/*c-r*/ pi_vector, K, beta, n);
+    return log_like_hardinit(data,/*c-r*/kappa_vector,/*c-r*/mu_matrix, K, beta, n, beta_matrix);
   }else{
     return -1e10;
   }
