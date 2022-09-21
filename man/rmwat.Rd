@@ -4,7 +4,7 @@
 \alias{rmwat}
 \title{Random Sampling from a Mixture of Watson Distributions}
 \usage{
-rmwat(n, weights, kappa, mu, type = "acg", b = -10, cT = 0, rho = 1.1)
+rmwat(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1)
 }
 \arguments{
 \item{n}{an integer giving the number of samples to draw.}
@@ -15,13 +15,13 @@ rmwat(n, weights, kappa, mu, type = "acg", b = -10, cT = 0, rho = 1.1)
 
 \item{mu}{a numeric matrix with columns giving the mu parameters of the mixture components.}
 
-\item{type}{a string indicating whether ACG sampler (\code{type = acg}), Tynflex sampler (\code{type = tinflex}) or automatic selection (\code{type = auto}) of the sampler should be used, default: "acg".}
+\item{method}{a string indicating whether ACG sampler (\code{method = acg}), Tynflex sampler (\code{method = tinflex}) or automatic selection (\code{method = auto}) of the sampler should be used, default: "acg".}
 
 \item{b}{a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.}
 
 \item{cT}{parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.}
 
-\item{performance}{parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.}
+\item{rho}{performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.}
 }
 \value{
 A matrix with rows equal to the generated values.

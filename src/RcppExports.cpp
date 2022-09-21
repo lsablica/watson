@@ -41,8 +41,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // rmwat
-NumericMatrix rmwat(int n, arma::vec& weights, arma::vec kappa, arma::mat& mu, String type, double b, double cT, double rho);
-RcppExport SEXP _watson_rmwat(SEXP nSEXP, SEXP weightsSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP typeSEXP, SEXP bSEXP, SEXP cTSEXP, SEXP rhoSEXP) {
+NumericMatrix rmwat(int n, arma::vec& weights, arma::vec kappa, arma::mat& mu, String method, double b, double cT, double rho);
+RcppExport SEXP _watson_rmwat(SEXP nSEXP, SEXP weightsSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP methodSEXP, SEXP bSEXP, SEXP cTSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -50,11 +50,11 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< arma::vec& >::type weights(weightsSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type kappa(kappaSEXP);
     Rcpp::traits::input_parameter< arma::mat& >::type mu(muSEXP);
-    Rcpp::traits::input_parameter< String >::type type(typeSEXP);
+    Rcpp::traits::input_parameter< String >::type method(methodSEXP);
     Rcpp::traits::input_parameter< double >::type b(bSEXP);
     Rcpp::traits::input_parameter< double >::type cT(cTSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
-    rcpp_result_gen = Rcpp::wrap(rmwat(n, weights, kappa, mu, type, b, cT, rho));
+    rcpp_result_gen = Rcpp::wrap(rmwat(n, weights, kappa, mu, method, b, cT, rho));
     return rcpp_result_gen;
 END_RCPP
 }

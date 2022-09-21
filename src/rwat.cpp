@@ -143,10 +143,10 @@ arma::mat rwatACG(int n, double kappa, arma::vec &mu, double b = -10){
 //' @param weights a numeric vector with non-negative elements giving the mixture probabilities.
 //' @param kappa a numeric vector giving the kappa parameters of the mixture components.
 //' @param mu a numeric matrix with columns giving the mu parameters of the mixture components.
-//' @param method a string indicating whether ACG sampler (\code{method = acg}), Tynflex sampler (\code{method = tinflex}) or automatic selection (\code{method = auto}) of the sampler should be used, default: "acg".  
+//' @param type a string indicating whether ACG sampler (\code{type = acg}), Tynflex sampler (\code{type = tinflex}) or automatic selection (\code{type = auto}) of the sampler should be used, default: "acg".  
 //' @param b a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.
 //' @param cT parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.
-//' @param rho performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
+//' @param performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
 //' @return  A matrix with rows equal to the generated values.
 //' @details The function generates samples from finite mixtures of Watson distributions,
 //'          using adjusted BACG algorithm of Kent (2013) for the case of Watson distribution. The algorithm is of the
@@ -161,10 +161,10 @@ arma::mat rwatACG(int n, double kappa, arma::vec &mu, double b = -10){
 //'                             mu = matrix(c(1,1,1,-1,1,1),nrow = 3))
 //' @rdname rmwat
 //' @references Kent J.T., Ganeiber A.M. and Mardia K.V. (2013). A new method to simulate the Bingham and related distributions
-//'   in directional data analysis with applications \url{http://arxiv.org/pdf/1310.8110v1.pdf}
+//'   in directional data analysis with applications \url{https://arxiv.org/pdf/1310.8110v1.pdf}.
 //' @export
 // [[Rcpp::export]]
-NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, String method = "acg",
+NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, String type = "acg",
                     double b = -10, double cT = 0, double rho=1.1){
   weights = arma::normalise(weights, 1);
   int p = mu.n_rows;
@@ -172,7 +172,7 @@ NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, S
   arma::mat A(n, p);
   arma::uvec sample = RcppArmadillo::sample(arma::regspace<arma::uvec>(0, K-1), n, true, weights);
   int size;
-  String method2;
+  String type2;
   arma::uvec which;
   arma::vec mus;
   for(int i = 0; i < K; i++) {
@@ -180,8 +180,8 @@ NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, S
     size = which.n_elem;
     mus = mu.col(i);
     if(size>0){
-       method2 = (method == "auto") ? ((ACGvsTinflex(size, kappa(i), p) < 1) ? "tinflex" : "acg") : method;
-       if(method2 == "acg"){
+       type2 = (type == "auto") ? ((ACGvsTinflex(size, kappa(i), p) < 1) ? "tinflex" : "acg") : type;
+       if(type2 == "acg"){
           A.rows(which) = rwatACG(size, kappa(i), mus, b);
        } else {
           A.rows(which) = rwatTinflex(size, kappa(i), mus, cT, rho);

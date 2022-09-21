@@ -15,10 +15,10 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' @param weights a numeric vector with non-negative elements giving the mixture probabilities.
 #' @param kappa a numeric vector giving the kappa parameters of the mixture components.
 #' @param mu a numeric matrix with columns giving the mu parameters of the mixture components.
-#' @param type a string indicating whether ACG sampler (\code{type = acg}), Tynflex sampler (\code{type = tinflex}) or automatic selection (\code{type = auto}) of the sampler should be used, default: "acg".  
+#' @param method a string indicating whether ACG sampler (\code{method = acg}), Tynflex sampler (\code{method = tinflex}) or automatic selection (\code{method = auto}) of the sampler should be used, default: "acg".  
 #' @param b a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.
 #' @param cT parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.
-#' @param performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
+#' @param rho performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
 #' @return  A matrix with rows equal to the generated values.
 #' @details The function generates samples from finite mixtures of Watson distributions,
 #'          using adjusted BACG algorithm of Kent (2013) for the case of Watson distribution. The algorithm is of the
@@ -35,8 +35,8 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' @references Kent J.T., Ganeiber A.M. and Mardia K.V. (2013). A new method to simulate the Bingham and related distributions
 #'   in directional data analysis with applications \url{http://arxiv.org/pdf/1310.8110v1.pdf}
 #' @export
-rmwat <- function(n, weights, kappa, mu, type = "acg", b = -10, cT = 0, rho = 1.1) {
-    .Call('_watson_rmwat', PACKAGE = 'watson', n, weights, kappa, mu, type, b, cT, rho)
+rmwat <- function(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1) {
+    .Call('_watson_rmwat', PACKAGE = 'watson', n, weights, kappa, mu, method, b, cT, rho)
 }
 
 g <- function(alpha, beta, x, N = 30L) {
