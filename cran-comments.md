@@ -23,4 +23,4 @@ The original code is under the same licence as the package (GPL-3).
 
 Slash has been added to the URL in DESCRIPTION to follow the moved path.
 
-The name of the package has been removed from the start of the Description field. It starts now with "This package offers ...".
+The name of the package has been removed from the start of the Description field. It starts now with "Tools for fitting and ...".
