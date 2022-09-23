@@ -13,3 +13,8 @@ My understanding is that this inflation of the libs subdirectory is due to the u
 
 ## Downstream dependencies
 none
+
+## Copyright
+The two authors of the GNU GSL code were extended by a "cph" mark and comment that this only applies to the one file hyper3.cpp. Solution was motivated by article https://rmflight.github.io/post/licensing-r-packages-that-include-others-code/
+
+The original code is under the same licence as the package (GPL-3).

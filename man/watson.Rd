@@ -38,8 +38,11 @@ option E (specifying the E-step employed), with possible values "softmax" (defau
 
  In the M-step, the parameters of the respective component distributions
  are estimated via maximum likelihood, which is accomplished by solving the equation
-  \deqn{g(\alpha,\beta, \kappa)=r, where  0<\alpha<\beta,  and  0\leq r\leq 1,}
-  where \deqn{g(\alpha, \beta, \kappa) =  (\alpha/\beta)M(\alpha+1, \beta+1,  \kappa)/M(\alpha, \beta,  \kappa),} with M being the Kummer's function.
+  \deqn{g(\alpha,\beta, \kappa)=r,}
+  where
+  \deqn{0<\alpha<\beta,  \  0\leq r\leq 1}
+  and
+   \deqn{g(\alpha, \beta, \kappa) =  (\alpha/\beta)M(\alpha+1, \beta+1,  \kappa)/M(\alpha, \beta,  \kappa),} with M being the Kummer's function.
   Via control argument M, one can specify how to (approximately) solve these equations.
   The possible methods are:
 
@@ -112,7 +115,7 @@ option E (specifying the E-step employed), with possible values "softmax" (defau
   a logical indicating whether to provide some output on algorithmic progress, default: FALSE.
 }
 \examples{
-\dontrun{
+\donttest{
 ## Generate a sample with two orthogonal circles (negative kappas)
 a <- rmwat(n = 200, weights = c(0.5,0.5), kappa = c(-200,-200),
                         mu = matrix(c(1,1,1,-1,1,1),nrow = 3))

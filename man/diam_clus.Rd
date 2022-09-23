@@ -21,13 +21,11 @@ a matrix with the concentration directions with an attribute "id" defining the c
 \code{diam_clus} clusters axial data on sphere using  the algorithm proposed in Dhillon et al. (2003).
 }
 \examples{
-\dontrun{
 ## Generate a sample 
 a <- rmwat(n = 200, weights = c(0.5,0.5), kappa = c(20, 20),
                         mu = matrix(c(1,1,-1,1),nrow = 2))
 ## Fit basic model
 q <- diam_clus(a, 2)
-}
 }
 \references{
 Inderjit S Dhillon, Edward M Marcotte, and Usman Roshan. Diametrical clustering 

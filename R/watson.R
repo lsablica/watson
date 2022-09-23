@@ -51,24 +51,21 @@ predict.watfit <- function(object, newdata = NULL, type = c("class_ids", "member
 #' @param niter integer indicating the number of iterations of the diametrical clustering algorithm, default: 100.
 #' @return a matrix with the concentration directions with an attribute "id" defining the classified categories.
 #' @examples
-#' \dontrun{
 #' ## Generate a sample 
 #' a <- rmwat(n = 200, weights = c(0.5,0.5), kappa = c(20, 20),
 #'                         mu = matrix(c(1,1,-1,1),nrow = 2))
 #' ## Fit basic model
 #' q <- diam_clus(a, 2)
-#' }
 #' @rdname diam_clus
 #' @references Inderjit S Dhillon, Edward M Marcotte, and Usman Roshan. Diametrical clustering 
 #' for identifying anti-correlated gene clusters. Bioinformatics, 19(13):1612-1619, 2003.
 #' @export
 diam_clus <- function(x, k, niter = 100){
   if(inherits(x, "Matrix")){
-    a=diam_clus2(x,k,niter)
+    a = diam_clus2(x,k,niter)
   } else{
-    a=diam_clus1(x,k,niter)
+    a = diam_clus1(x,k,niter)
   }
-  #attr(a[[1]],"dim") <- NULL
   a
 }
 
@@ -96,8 +93,11 @@ diam_clus <- function(x, k, niter = 100){
 #'
 #'  In the M-step, the parameters of the respective component distributions
 #'  are estimated via maximum likelihood, which is accomplished by solving the equation
-#'   \deqn{g(\alpha,\beta, \kappa)=r, where  0<\alpha<\beta,  and  0\leq r\leq 1,}
-#'   where \deqn{g(\alpha, \beta, \kappa) =  (\alpha/\beta)M(\alpha+1, \beta+1,  \kappa)/M(\alpha, \beta,  \kappa),} with M being the Kummer's function.
+#'   \deqn{g(\alpha,\beta, \kappa)=r,}
+#'   where
+#'   \deqn{0<\alpha<\beta,  \  0\leq r\leq 1}
+#'   and
+#'    \deqn{g(\alpha, \beta, \kappa) =  (\alpha/\beta)M(\alpha+1, \beta+1,  \kappa)/M(\alpha, \beta,  \kappa),} with M being the Kummer's function.
 #'   Via control argument M, one can specify how to (approximately) solve these equations.
 #'   The possible methods are:
 #'
@@ -170,7 +170,7 @@ diam_clus <- function(x, k, niter = 100){
 #'   a logical indicating whether to provide some output on algorithmic progress, default: FALSE.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' ## Generate a sample with two orthogonal circles (negative kappas)
 #' a <- rmwat(n = 200, weights = c(0.5,0.5), kappa = c(-200,-200),
 #'                         mu = matrix(c(1,1,1,-1,1,1),nrow = 3))

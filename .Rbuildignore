@@ -7,3 +7,4 @@
 ^data-raw$
 ^sticker\.png$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$

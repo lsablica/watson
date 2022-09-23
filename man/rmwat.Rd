@@ -31,8 +31,7 @@ A matrix with rows equal to the generated values.
 }
 \details{
 The function generates samples from finite mixtures of Watson distributions,
-         using adjusted BACG algorithm of Kent (2013) for the case of Watson distribution. The algorithm is of the
-         rejection-sampling form.
+         using methods from Sablica, Hornik and Leydold (2022) \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
 }
 \examples{
 
@@ -44,6 +43,5 @@ sample2 <- rmwat(n = 20, weights = c(0.5,0.5), kappa = c(-200,-200),
                             mu = matrix(c(1,1,1,-1,1,1),nrow = 3))
 }
 \references{
-Kent J.T., Ganeiber A.M. and Mardia K.V. (2013). A new method to simulate the Bingham and related distributions
-  in directional data analysis with applications \url{https://arxiv.org/pdf/1310.8110v1.pdf}.
+Sablica, Hornik and Leydold (2022). Random Sampling from the Watson Distribution \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
 }
