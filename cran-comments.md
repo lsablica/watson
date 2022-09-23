@@ -18,3 +18,9 @@ none
 The two authors of the GNU GSL code were extended by a "cph" mark and comment that this only applies to the one file hyper3.cpp. Solution was motivated by article https://rmflight.github.io/post/licensing-r-packages-that-include-others-code/
 
 The original code is under the same licence as the package (GPL-3).
+
+## Fixed previous comments
+
+Slash has been added to the URL in DESCRIPTION to follow the moved path.
+
+The name of the package has been removed from the start of the Description field. It starts now with "This package offers ...".
