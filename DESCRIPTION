@@ -1,13 +1,14 @@
 Package: watson
 Type: Package
-Title: Mixtures of Watson Distributions
+Title: Package for Fitting and Simulating Mixtures of Watson Distributions
 Version: 0.0.1
 Authors@R: c(
-    person("Lukas", "Sablica", email = "lsablica@wu.ac.at", role = c("aut", "cre")), 
+    person("Lukas", "Sablica", email = "lsablica@wu.ac.at", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9166-4563")), 
     person("Kurt", "Hornik", email = "Kurt.Hornik@wu.ac.at", role = "aut",
            comment = c(ORCID = "0000-0003-4198-9911")),
     person("Josef", "Leydold", email = "Josef.Leydold@wu.ac.at", role = "aut"),
-    person("Gerard", "Jungman", role = "ctb")
+    person("Gerard", "Jungman", role = "ctb", comment = "GNU GSL code for special functions")
   )
 Maintainer: Lukas Sablica <lsablica@wu.ac.at>
 Description: Fit and simulate mixtures of Watson distributions.
@@ -16,4 +17,4 @@ Encoding: UTF-8
 Imports: Rcpp (>= 0.12.18), Tinflex (>= 1.8)
 LinkingTo: Rcpp, RcppArmadillo, Tinflex
 RoxygenNote: 7.1.2
-Depends: R (>= 2.10)
+Depends: R (>= 3.1.0)

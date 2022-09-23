@@ -33,7 +33,7 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #'                             mu = matrix(c(1,1,1,-1,1,1),nrow = 3))
 #' @rdname rmwat
 #' @references Kent J.T., Ganeiber A.M. and Mardia K.V. (2013). A new method to simulate the Bingham and related distributions
-#'   in directional data analysis with applications \url{http://arxiv.org/pdf/1310.8110v1.pdf}
+#'   in directional data analysis with applications \url{https://arxiv.org/pdf/1310.8110v1.pdf}.
 #' @export
 rmwat <- function(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1) {
     .Call('_watson_rmwat', PACKAGE = 'watson', n, weights, kappa, mu, method, b, cT, rho)

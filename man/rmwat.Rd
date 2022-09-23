@@ -45,5 +45,5 @@ sample2 <- rmwat(n = 20, weights = c(0.5,0.5), kappa = c(-200,-200),
 }
 \references{
 Kent J.T., Ganeiber A.M. and Mardia K.V. (2013). A new method to simulate the Bingham and related distributions
-  in directional data analysis with applications \url{http://arxiv.org/pdf/1310.8110v1.pdf}
+  in directional data analysis with applications \url{https://arxiv.org/pdf/1310.8110v1.pdf}.
 }
