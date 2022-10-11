@@ -71,6 +71,7 @@ typedef TINFLEX_GEN * TINFLEX_SETUP_FUNC (TINFLEX_FUNCT *lpdf, TINFLEX_FUNCT *dl
 					  double rho, int max_intervals);
 
 typedef SEXP TINFLEX_SAMPLE_FUNC (TINFLEX_GEN *gen, int n);
+typedef void * TINFLEX_FREE_FUNC (TINFLEX_GEN *gen);
 typedef double TINFLEX_SAMPLE_DOUBLE_FUNC (TINFLEX_GEN *gen);
 
 
@@ -90,12 +91,12 @@ void Tinflexsampler_free (SEXP sexp_gen)
 {
   TINFLEX_GEN *gen;
 
-  static void * (*free_func)(TINFLEX_GEN *) = NULL;
-  if (free_func == NULL)
-    free_func = R_GetCCallable("Tinflex", "Tinflex_lib_free");
+  static TINFLEX_FREE_FUNC *Tinflex_free = NULL;
+  if (Tinflex_free == NULL)
+    Tinflex_free = (TINFLEX_FREE_FUNC *) R_GetCCallable("Tinflex", "Tinflex_lib_free");
   
   gen = R_ExternalPtrAddr(sexp_gen);
-  free_func (gen);
+  Tinflex_free(gen);
   R_ClearExternalPtr(sexp_gen);
 } /* end of Tinflexsampler_free() */ 
 
@@ -189,9 +190,9 @@ SEXP Tinflexsampler_sampler (SEXP sexp_n,
     Tinflex_sample = (TINFLEX_SAMPLE_FUNC*) R_GetCCallable("Tinflex", "Tinflex_lib_sample");
 
   /* get Tinflex free function */
-  static void * (*Tinflex_free)(TINFLEX_GEN *) = NULL;
+  static TINFLEX_FREE_FUNC *Tinflex_free = NULL;
   if (Tinflex_free == NULL)
-    Tinflex_free = R_GetCCallable("Tinflex", "Tinflex_lib_free");
+    Tinflex_free = (TINFLEX_FREE_FUNC *) R_GetCCallable("Tinflex", "Tinflex_lib_free");
 
   /* extract arguments */
   n = INTEGER_VALUE(sexp_n);

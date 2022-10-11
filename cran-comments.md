@@ -12,5 +12,6 @@ My understanding is that this inflation of the libs subdirectory is due to the u
 ## Downstream dependencies
 none
 
-
+## Fixes
+We fixed the warnings that appeared in the current version on CRAN
 
