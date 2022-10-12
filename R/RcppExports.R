@@ -15,7 +15,7 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' @param weights a numeric vector with non-negative elements giving the mixture probabilities.
 #' @param kappa a numeric vector giving the kappa parameters of the mixture components.
 #' @param mu a numeric matrix with columns giving the mu parameters of the mixture components.
-#' @param method a string indicating whether ACG sampler (\code{method = acg}), Tynflex sampler (\code{method = tinflex}) or automatic selection (\code{method = auto}) of the sampler should be used, default: "acg".  
+#' @param method a string indicating whether ACG sampler (\code{method = "acg"}), Tinflex sampler (\code{method = "tinflex"}) or automatic selection (\code{method = "auto"}) of the sampler should be used, default: "acg".  
 #' @param b a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.
 #' @param cT parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.
 #' @param rho performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.

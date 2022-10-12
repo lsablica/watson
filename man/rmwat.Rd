@@ -15,7 +15,7 @@ rmwat(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1)
 
 \item{mu}{a numeric matrix with columns giving the mu parameters of the mixture components.}
 
-\item{method}{a string indicating whether ACG sampler (\code{method = acg}), Tynflex sampler (\code{method = tinflex}) or automatic selection (\code{method = auto}) of the sampler should be used, default: "acg".}
+\item{method}{a string indicating whether ACG sampler (\code{method = "acg"}), Tinflex sampler (\code{method = "tinflex"}) or automatic selection (\code{method = "auto"}) of the sampler should be used, default: "acg".}
 
 \item{b}{a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.}
 
