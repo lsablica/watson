@@ -13,5 +13,5 @@ My understanding is that this inflation of the libs subdirectory is due to the u
 none
 
 ## Fixes
-We fixed the warnings that appeared in the current version on CRAN
+We added casting to some of the linked C functions to fix the warnings that appeared in the current version on CRAN
 
