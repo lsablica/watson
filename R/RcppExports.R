@@ -17,7 +17,6 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' @param mu a numeric matrix with columns giving the mu parameters of the mixture components.
 #' @param method a string indicating whether ACG sampler (\code{method = "acg"}), Tinflex sampler (\code{method = "tinflex"}) or automatic selection (\code{method = "auto"}) of the sampler should be used, default: "acg".  
 #' @param b a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.
-#' @param cT parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.
 #' @param rho performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
 #' @return  A matrix with rows equal to the generated values.
 #' @details The function generates samples from finite mixtures of Watson distributions,
@@ -33,8 +32,8 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' @rdname rmwat
 #' @references Sablica, Hornik and Leydold (2022). Random Sampling from the Watson Distribution \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
 #' @export
-rmwat <- function(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1) {
-    .Call('_watson_rmwat', PACKAGE = 'watson', n, weights, kappa, mu, method, b, cT, rho)
+rmwat <- function(n, weights, kappa, mu, method = "acg", b = -10, rho = 1.1) {
+    .Call('_watson_rmwat', PACKAGE = 'watson', n, weights, kappa, mu, method, b, rho)
 }
 
 g <- function(alpha, beta, x, N = 30L) {

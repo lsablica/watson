@@ -1,7 +1,6 @@
 ## Test environments
 * local Ubuntu 18.04 LTS, R 4.1.2
 * win-builder 
-* R-hub
 
 ## R CMD check results
 There were no ERRORs or WARNINGs.
@@ -12,6 +11,4 @@ My understanding is that this inflation of the libs subdirectory is due to the u
 ## Downstream dependencies
 none
 
-## Fixes
-We added casting to some of the linked C functions to fix the warnings that appeared in the current version on CRAN
 

@@ -145,7 +145,6 @@ arma::mat rwatACG(int n, double kappa, arma::vec &mu, double b = -10){
 //' @param mu a numeric matrix with columns giving the mu parameters of the mixture components.
 //' @param method a string indicating whether ACG sampler (\code{method = "acg"}), Tinflex sampler (\code{method = "tinflex"}) or automatic selection (\code{method = "auto"}) of the sampler should be used, default: "acg".  
 //' @param b a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.
-//' @param cT parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.
 //' @param rho performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
 //' @return  A matrix with rows equal to the generated values.
 //' @details The function generates samples from finite mixtures of Watson distributions,
@@ -163,7 +162,7 @@ arma::mat rwatACG(int n, double kappa, arma::vec &mu, double b = -10){
 //' @export
 // [[Rcpp::export]]
 NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, String method = "acg",
-                    double b = -10, double cT = 0, double rho=1.1){
+                    double b = -10, double rho=1.1){
   weights = arma::normalise(weights, 1);
   int p = mu.n_rows;
   int K = mu.n_cols;
@@ -182,7 +181,7 @@ NumericMatrix rmwat(int n, arma::vec &weights, arma::vec kappa, arma::mat &mu, S
        if(method2 == "acg"){
           A.rows(which) = rwatACG(size, kappa(i), mus, b);
        } else {
-          A.rows(which) = rwatTinflex(size, kappa(i), mus, cT, rho);
+          A.rows(which) = rwatTinflex(size, kappa(i), mus, 0, rho);
        } 
     }
   }

@@ -41,8 +41,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // rmwat
-NumericMatrix rmwat(int n, arma::vec& weights, arma::vec kappa, arma::mat& mu, String method, double b, double cT, double rho);
-RcppExport SEXP _watson_rmwat(SEXP nSEXP, SEXP weightsSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP methodSEXP, SEXP bSEXP, SEXP cTSEXP, SEXP rhoSEXP) {
+NumericMatrix rmwat(int n, arma::vec& weights, arma::vec kappa, arma::mat& mu, String method, double b, double rho);
+RcppExport SEXP _watson_rmwat(SEXP nSEXP, SEXP weightsSEXP, SEXP kappaSEXP, SEXP muSEXP, SEXP methodSEXP, SEXP bSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -52,9 +52,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< arma::mat& >::type mu(muSEXP);
     Rcpp::traits::input_parameter< String >::type method(methodSEXP);
     Rcpp::traits::input_parameter< double >::type b(bSEXP);
-    Rcpp::traits::input_parameter< double >::type cT(cTSEXP);
     Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
-    rcpp_result_gen = Rcpp::wrap(rmwat(n, weights, kappa, mu, method, b, cT, rho));
+    rcpp_result_gen = Rcpp::wrap(rmwat(n, weights, kappa, mu, method, b, rho));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -237,7 +236,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_watson_rwatTinflex", (DL_FUNC) &_watson_rwatTinflex, 5},
     {"_watson_rwatACG", (DL_FUNC) &_watson_rwatACG, 4},
-    {"_watson_rmwat", (DL_FUNC) &_watson_rmwat, 8},
+    {"_watson_rmwat", (DL_FUNC) &_watson_rmwat, 7},
     {"_watson_g", (DL_FUNC) &_watson_g, 4},
     {"_watson_kummerM", (DL_FUNC) &_watson_kummerM, 3},
     {"_watson_log_hyperg_1F1", (DL_FUNC) &_watson_log_hyperg_1F1, 4},

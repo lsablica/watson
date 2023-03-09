@@ -4,7 +4,7 @@
 \alias{rmwat}
 \title{Random Sampling from a Mixture of Watson Distributions}
 \usage{
-rmwat(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1)
+rmwat(n, weights, kappa, mu, method = "acg", b = -10, rho = 1.1)
 }
 \arguments{
 \item{n}{an integer giving the number of samples to draw.}
@@ -18,8 +18,6 @@ rmwat(n, weights, kappa, mu, method = "acg", b = -10, cT = 0, rho = 1.1)
 \item{method}{a string indicating whether ACG sampler (\code{method = "acg"}), Tinflex sampler (\code{method = "tinflex"}) or automatic selection (\code{method = "auto"}) of the sampler should be used, default: "acg".}
 
 \item{b}{a positive numeric hyper-parameter used in the sampling. If not a positive value is given, optimal choice of b is used, default: -10.}
-
-\item{cT}{parameter for transformation (numeric vector of length 1), see \code{\link[Tinflex]{Tinflex.setup}}, default: 0.}
 
 \item{rho}{performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.}
 }

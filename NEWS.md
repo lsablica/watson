@@ -1,3 +1,9 @@
+# watson 0.2
+
+## Minor improvements and fixes
+
+* Removed cT argument from rmwat() 
+
 # watson 0.1
 
 ## Minor improvements and fixes
