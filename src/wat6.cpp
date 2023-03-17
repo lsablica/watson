@@ -464,9 +464,9 @@ void M_step(const T &data, double (*M_method)(double, double, double, int, doubl
     arma::eig_sym(eigva, eigve, S);
     lam1 = eigva(p-1); lamp = eigva(0);
     if(lam1 <= 0){
-      stop("group defined by null-matrix in data occurs, please remove rows containing only zeros");
+      stop("group defined by null-matrix in data occurred, please remove rows containing only zeros");
     } else if(lam1 >= 1){
-      warning("cluster with only one observation occurd, results can be unprecise");
+      warning("cluster with only one observation occurred, results can be unprecise");
       v1 =   -std::numeric_limits<double>::infinity();
       kappa1 = 1e16;
       mu1 = eigve.col(p-1);

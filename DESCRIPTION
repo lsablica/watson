@@ -1,13 +1,14 @@
 Package: watson
 Type: Package
 Title: Fitting and Simulating Mixtures of Watson Distributions
-Version: 0.2
+Version: 0.3
 Authors@R: c(
     person("Lukas", "Sablica", email = "lsablica@wu.ac.at", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9166-4563")), 
     person("Kurt", "Hornik", email = "Kurt.Hornik@wu.ac.at", role = "aut",
            comment = c(ORCID = "0000-0003-4198-9911")),
-    person("Josef", "Leydold", email = "Josef.Leydold@wu.ac.at", role = "aut"),
+    person("Josef", "Leydold", email = "Josef.Leydold@wu.ac.at", role = "aut",
+           comment = c(ORCID = "0000-0002-9076-4893")),
     person("Gerard", "Jungman", role = c("ctb","cph"), comment = "Author and copyright holder of included GNU GSL code"),
     person("Brian", "Gough", role = c("ctb","cph"), comment = "Author and copyright holder of included GNU GSL code")
   )

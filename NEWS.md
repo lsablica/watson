@@ -1,3 +1,9 @@
+# watson 0.3
+
+## Minor improvements and fixes
+
+* Typos were fixed
+
 # watson 0.2
 
 ## Minor improvements and fixes
