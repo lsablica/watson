@@ -139,8 +139,11 @@ void diamclus_internal(const T &data, arma::mat &beta_matrix, arma::mat &mu_matr
     mu_matrix.col(i) = normalise(trans(r));
   }
   int iter = 0;
+  arma::uvec oldpart;
   while(iter < maxiter){
+    oldpart = part;
     part = index_max(pow(data*mu_matrix, 2), 1); // E-step
+    if(arma::all(oldpart == part) && iter != 0) break;
     for(int i = 0; i < K; i++) {     // M-step
       A = extract_rows(data, part, i);
       mu_matrix.col(i) = normalise((trans(A)*A)*mu_matrix.col(i));
