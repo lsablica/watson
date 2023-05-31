@@ -1,3 +1,9 @@
+# watson 0.4
+
+## Minor improvements and fixes
+
+* diam_clus() now stops is the allocations of the vector stop changing
+
 # watson 0.3
 
 ## Minor improvements and fixes
