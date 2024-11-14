@@ -1,3 +1,9 @@
+# watson 0.5
+
+## Minor improvements and fixes
+
+- Enhanced readability of model and simulation summaries, including fitting details, log-likelihood, and convergence status where applicable.
+
 # watson 0.4
 
 ## Minor improvements and fixes

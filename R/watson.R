@@ -12,6 +12,67 @@ print.watfit <- function(x, ...){
   cat("\nLog-likelihood: ", x$L, ",  Average log-likelihood: ", x$L/x$details$n  , "\n", sep = "")
 }
 #' @export
+summary.watfit <- function(object, ...) {
+   if (!inherits(object, "watfit")) stop("Object must be of class 'watfit'")
+   
+   cluster_summary <- rbind(
+      Weights = object$weights,
+      Kappa = object$kappa_vector,
+      object$mu_matrix
+   )
+
+   rownames(cluster_summary)[3:nrow(cluster_summary)] <- paste0("Mu_", 1:(nrow(cluster_summary) - 2))
+   rownames(cluster_summary)[c(1, 2)] <- c("Weights", "Kappa")
+
+   cat("Summary of Fitted Watson Mixture Model:\n")
+   cat("Number of Components (K):", object$K, "\n\n")
+   
+   cat("Cluster Summary (Weights, Kappa, Mu):\n")
+   print(cluster_summary)
+   cat("\n")
+
+   cat("Total Log-likelihood:", object$L, "\n")
+   
+   cat("\nFitting Details:\n")
+   cat("Number of Data Points (N):", object$details$n, "\n")
+   cat("Relative Tolerance (Convergence Criterion):", object$details$reltol, "\n")
+   cat("Max Iterations:", object$details$maxiter, "\n")
+   cat("E-step Method:", object$details$E, "\n")
+   cat("M-step Method:", object$details$M, "\n")
+   cat("Convergence Status:", ifelse(object$details$converge, "Converged", "Not Converged"), "\n")
+   
+   invisible(object)
+}
+#' @export
+print.rmwat <- function(x, ...){
+      print.default(matrix(c(x), dim(x)), ...)
+      invisible(x)
+}
+#' @export
+summary.rmwat <- function(object, ...) {
+   if (!inherits(object, "rmwat")) stop("Object must be of class 'rmwat'")
+   
+   id <- attr(object, "id")
+   data_summary <- summary(matrix(c(object), dim(object)))
+   cluster_distribution <- table(id)
+
+   cat("Data Summary:\n")
+   print(data_summary)
+   cat("\nCluster Allocation Distribution:\n")
+   print(cluster_distribution)
+   
+   invisible(object)
+}
+#' @export
+id <- function(object, ...) {
+   UseMethod("id")
+}
+#' @export
+id.rmwat <- function(object) {
+   if (!inherits(object, "rmwat")) stop("Object must be of class 'rmwat'")
+   attr(object, "id")
+}
+#' @export
 coef.watfit <- function(object, ...) object[c("weights", "kappa_vector", "mu_matrix")]
 
 #' @export
