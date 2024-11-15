@@ -8,3 +8,4 @@
 ^sticker\.png$
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^\.github$
