@@ -63,12 +63,19 @@ summary.rmwat <- function(object, ...) {
    
    invisible(object)
 }
+#' Generic Function for Extracting IDs
+#'
+#' A generic function to extract the ID attribute from an object.
+#'
+#' @param object An object from which to extract the ID attribute.
+#' @param ... Additional arguments.
+#' @return A vector of IDs representing the cluster allocations for the data.
 #' @export
 id <- function(object, ...) {
    UseMethod("id")
 }
 #' @export
-id.rmwat <- function(object) {
+id.rmwat <- function(object, ...) {
    if (!inherits(object, "rmwat")) stop("Object must be of class 'rmwat'")
    attr(object, "id")
 }
