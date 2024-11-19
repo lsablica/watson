@@ -1,6 +1,7 @@
 ## Test environments
-* local Ubuntu 18.04 LTS, R 4.1.2
+* local Ubuntu 24.04 LTS, R 4.3.3
 * win-builder 
+* GitHub Actions (ubuntu-20.04, macOS-latest, windows-latest) https://github.com/lsablica/watson/actions/runs/11856484265
 
 ## R CMD check results
 There were no ERRORs or WARNINGs.
