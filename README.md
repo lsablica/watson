@@ -4,6 +4,8 @@
   # watson
 
   [![R](https://img.shields.io/badge/R-%23E67E22.svg?&logo=R&logoColor=white)](https://www.r-project.org/)
+  [![C++](https://img.shields.io/badge/C%2B%2B-%2300599C.svg?&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
+  [![Armadillo](https://img.shields.io/badge/Armadillo-Linear%20Algebra%20Library-blue)](http://arma.sourceforge.net/)
   [![CRAN Status](https://www.r-pkg.org/badges/version/watson)](https://cran.r-project.org/package=watson)
   [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 
@@ -54,7 +56,7 @@ Axial data are unit vectors on a sphere where directions are indistinguishable (
 - **Biostatistics**: Analyzing molecular orientations.
 - **Machine Learning**: Embedding spaces and sentiment analysis.
 
-With `watson`, you can unlock the full potential of axial data, leveraging a framework that combines theoretical brilliance with computational power.
+With `watson`, you can unlock the full potential of axial data, leveraging a framework that combines theoretical results with computational power.
 
 
 ## Installation
