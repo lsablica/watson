@@ -81,7 +81,7 @@ NumericVector Tinflexsampler_sampler_from_c(int n,
 
 // [[Rcpp::export]]
 arma::mat rwatTinflex(int n, double kappa, arma::vec &mu, double cT, double rho){
-   double norm = as_scalar(sum(pow(mu,2)));
+   double norm = arma::as_scalar(sum(pow(mu,2)));
    int p = mu.n_elem;
    arma::mat A(n, p, arma::fill::randn);
    if(kappa == 0 || norm == 0){/*uniform*/
@@ -102,7 +102,7 @@ arma::mat rwatTinflex(int n, double kappa, arma::vec &mu, double cT, double rho)
 
 // [[Rcpp::export]]
 arma::mat rwatACG(int n, double kappa, arma::vec &mu, double b = -10){
-   double norm = as_scalar(sum(pow(mu,2)));
+   double norm = arma::as_scalar(sum(pow(mu,2)));
    int p = mu.n_elem;
    arma::mat A(n, p);
    if(kappa == 0 || norm == 0){/*uniform*/
