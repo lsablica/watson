@@ -29,7 +29,7 @@ A matrix with rows equal to the generated values.
 }
 \details{
 The function generates samples from finite mixtures of Watson distributions,
-         using methods from Sablica, Hornik and Leydold (2022) \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
+         using methods from Sablica, Hornik and Leydold (2022) \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2024.2416521}.
 }
 \examples{
 
@@ -41,5 +41,5 @@ sample2 <- rmwat(n = 20, weights = c(0.5,0.5), kappa = c(-200,-200),
                             mu = matrix(c(1,1,1,-1,1,1),nrow = 3))
 }
 \references{
-Sablica, Hornik and Leydold (2022). Random Sampling from the Watson Distribution \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
+Sablica, Hornik and Leydold (2022). Random Sampling from the Watson Distribution \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2024.2416521}.
 }

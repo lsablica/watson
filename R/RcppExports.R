@@ -20,7 +20,7 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' @param rho performance parameter: requested upper bound for ratio of area below hat to area below squeeze (numeric). See \code{\link[Tinflex]{Tinflex.setup}}, default: 1.1.
 #' @return  A matrix with rows equal to the generated values.
 #' @details The function generates samples from finite mixtures of Watson distributions,
-#'          using methods from Sablica, Hornik and Leydold (2022) \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
+#'          using methods from Sablica, Hornik and Leydold (2022) \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2024.2416521}.
 #' @examples
 #'
 #' ## simulate from Watson distribution
@@ -30,7 +30,7 @@ rwatACG <- function(n, kappa, mu, b = -10) {
 #' sample2 <- rmwat(n = 20, weights = c(0.5,0.5), kappa = c(-200,-200),
 #'                             mu = matrix(c(1,1,1,-1,1,1),nrow = 3))
 #' @rdname rmwat
-#' @references Sablica, Hornik and Leydold (2022). Random Sampling from the Watson Distribution \url{https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution}.
+#' @references Sablica, Hornik and Leydold (2022). Random Sampling from the Watson Distribution \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2024.2416521}.
 #' @export
 rmwat <- function(n, weights, kappa, mu, method = "acg", b = -10, rho = 1.1) {
     .Call('_watson_rmwat', PACKAGE = 'watson', n, weights, kappa, mu, method, b, rho)
