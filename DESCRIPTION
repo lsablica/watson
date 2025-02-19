@@ -33,7 +33,7 @@ LinkingTo: Rcpp, RcppArmadillo, Tinflex
 URL: https://github.com/lsablica/watson
 BugReports: https://github.com/lsablica/watson/issues
 RoxygenNote: 7.3.2
-Depends: R (>= 3.1.0)
+Depends: R (>= 3.5.0)
 Suggests: 
     HSAUR3,
     testthat (>= 3.0.0)

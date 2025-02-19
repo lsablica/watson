@@ -1,3 +1,9 @@
+# watson 0.6
+
+## Minor improvements and fixes
+
+- namespace fixes for new version of RcppArmadillo
+
 # watson 0.5
 
 ## Minor improvements and fixes
