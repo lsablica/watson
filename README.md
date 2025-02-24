@@ -74,7 +74,7 @@ If you use `watson` in your research, please cite:
 
 ```bibtex
 @article{watson2025,
-  title = "{watson: An R Package for Fitting Mixtures of Watson Distributions}",
+  title = "{watson: An {R} Package for Fitting Mixtures of {Watson} Distributions}",
   author = {Lukas Sablica and Kurt Hornik and Josef Leydold},
   journal = {Journal of Statistical Software},
   year = 2025,
