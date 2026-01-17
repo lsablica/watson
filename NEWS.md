@@ -1,3 +1,9 @@
+# watson 1.0
+
+## Minor improvements and fixes
+
+- added references to the official paper release of the package
+
 # watson 0.6
 
 ## Minor improvements and fixes

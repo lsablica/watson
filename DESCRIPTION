@@ -1,7 +1,7 @@
 Package: watson
 Type: Package
 Title: Fitting and Simulating Mixtures of Watson Distributions
-Version: 0.6
+Version: 1.0
 Authors@R: c(
     person("Lukas", "Sablica", email = "lsablica@wu.ac.at", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9166-4563")), 
@@ -14,6 +14,7 @@ Authors@R: c(
   )
 Maintainer: Lukas Sablica <lsablica@wu.ac.at>
 Description: Tools for fitting and simulating mixtures of Watson distributions. 
+             The package is described in Sablica, Hornik and Leydold (2026) <doi:10.18637/jss.v115.i04>.
              The random sampling scheme of the package offers two sampling 
              algorithms that are based of the results of Sablica, Hornik and Leydold (2022)
              <doi:10.1080/10618600.2024.2416521>.
@@ -33,7 +34,7 @@ Imports: Rcpp (>= 0.12.18), Tinflex (>= 1.8)
 LinkingTo: Rcpp, RcppArmadillo, Tinflex
 URL: https://github.com/lsablica/watson
 BugReports: https://github.com/lsablica/watson/issues
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: R (>= 3.5.0)
 Suggests: 
     HSAUR3,

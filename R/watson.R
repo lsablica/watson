@@ -259,6 +259,9 @@ diam_clus <- function(x, k, niter = 100){
 #' ## Compare the fitted classes to the true ones:
 #' table(True = attr(a, "id"), Fitted = predict(q))
 #' }
+#' @references Sablica, L., Hornik, K. and Leydold, J. (2025).
+#' \emph{watson: An R Package for Fitting Mixtures of Watson Distributions}.
+#' Journal of Statistical Software, \strong{115}(4), 1--30. \doi{10.18637/jss.v115.i04}
 #' @rdname watson
 #' @export
 

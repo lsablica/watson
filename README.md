@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="sticker.png" alt="watson Logo" width="200"/>
+  <img src="man/figures/logo.png" alt="watson Logo" width="200"/>
 
   # watson
 
@@ -78,7 +78,10 @@ If you use `watson` in your research, please cite:
   author = {Lukas Sablica and Kurt Hornik and Josef Leydold},
   journal = {Journal of Statistical Software},
   year = 2025,
-  note = {Accepted for publication}
+  volume = 115,
+  number = 4,
+  pages  = {1--30},
+  doi    = {10.18637/jss.v115.i04}
 }
 ```
 
