@@ -1,5 +1,5 @@
 ## Test environments
-* local Ubuntu 24.04 LTS, R 4.3.3
+* local Ubuntu 24.04 LTS, R 4.5.2
 * win-builder 
 * GitHub Actions (ubuntu-24.04, macOS-latest, windows-latest) https://github.com/lsablica/watson/actions
 
