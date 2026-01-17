@@ -1,7 +1,7 @@
 Package: watson
 Type: Package
 Title: Fitting and Simulating Mixtures of Watson Distributions
-Version: 1.0
+Version: 1.0.0
 Authors@R: c(
     person("Lukas", "Sablica", email = "lsablica@wu.ac.at", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9166-4563")), 
