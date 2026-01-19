@@ -77,11 +77,12 @@ If you use `watson` in your research, please cite:
   title = "{watson: An {R} Package for Fitting Mixtures of {Watson} Distributions}",
   author = {Lukas Sablica and Kurt Hornik and Josef Leydold},
   journal = {Journal of Statistical Software},
-  year = 2025,
+  year = 2026,
   volume = 115,
   number = 4,
   pages  = {1--30},
-  doi    = {10.18637/jss.v115.i04}
+  url = {https://www.jstatsoft.org/index.php/jss/article/view/v115i04},
+  doi = {10.18637/jss.v115.i04}
 }
 ```
 
